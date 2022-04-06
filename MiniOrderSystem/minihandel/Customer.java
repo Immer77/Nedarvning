@@ -78,12 +78,7 @@ public class Customer {
 	 * @return
 	 */
 	public double totalBuyWithDiscount(){
-		double result = 0;
-		for(Order order : orders){
-			result += order.getOrderPrice();
-		}
-
-		return result - discount.getDiscount(result);
+		return totalBuy() - discount.getDiscount(totalBuy());
 	}
 
 }
